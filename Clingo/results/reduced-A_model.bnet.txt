@@ -1,0 +1,4 @@
+Compute fixed points
+Return 14 fixed points
+Running time 0.02s
+===

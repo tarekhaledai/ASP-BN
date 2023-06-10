@@ -1,0 +1,67 @@
+targets, factors
+AKT, (AKT & (!CASP3 & (PI3K & !PP2A)))
+ASK1, (!P21 & ROS)
+ATM, ROS
+BAX, (!AKT & ((!P53 & (PP2A & TBID)) | (P53 & PP2A)))
+BCATENIN, (!GSK3B | (GSK3B & !APC))
+BCL2, ((!NFKB & (!P53 & (!PP2A & STAT3))) | (NFKB & (!P53 & !PP2A)))
+CASP3, ((!CASP8 & (CASP9 & !IAP)) | (CASP8 & !IAP))
+CASP8, (!CFLIP & (FADD & !P21))
+CASP9, (CYTC & (!IAP & !P21))
+CCL2, NFKB
+CERAMIDE, (SMASE & !SPHK1)
+CFLIP, NFKB
+COX2, (S1P & TNFR)
+CTL, (IFNG & !TGFB)
+CYTC, MOMP
+DC, ((!CCL2 & (!IL10 & TNFA)) | (CCL2 & !IL10))
+EP2, PGE2
+ERK, MEK
+FADD, ((!FAS & TNFR) | FAS)
+FAS, CTL
+GP130, IL6
+GSK3B, (!AKT & !EP2)
+IAP, ((!NFKB & (!SMAC & STAT3)) | (NFKB & !SMAC))
+IFNG, ((!CTL & ((!IFNG & TH1) | IFNG)) | CTL)
+IKB, (IKB & !IKK)
+IKK, ((!AKT & (S1P & TNFR)) | AKT)
+IL10, ((!IL10 & ((!TH2 & TREG) | TH2)) | IL10)
+IL12, ((!DC & MAC) | DC)
+IL4, ((!DC & TH2) | DC)
+IL6, ((!DC & ((!MAC & NFKB) | MAC)) | DC)
+JAK, (GP130 & (JAK & !SOCS))
+JNK, ((!ASK1 & MEKK1) | ASK1)
+JUN, ((!BCATENIN & (ERK & (!GSK3B & JNK))) | (BCATENIN & (!GSK3B & JNK)))
+MAC, ((!CCL2 & (IFNG & !IL10)) | (CCL2 & !IL10))
+MDM2, (AKT & (!ATM & (!GSK3B & P53)))
+MEK, ((!MEK & ((!RAF & ROS) | RAF)) | MEK)
+MEKK1, ((!CERAMIDE & ((!TGFR & TNFR) | TGFR)) | CERAMIDE)
+MOMP, ((!BAX & (!BCL2 & ((!CERAMIDE & TBID) | CERAMIDE))) | (BAX & !BCL2))
+NFKB, !IKB
+P21, (!CASP3 & (!GSK3B & (P21 & ((!P53 & SMAD) | P53))))
+P53, ((!ATM & ((!JNK & (!MDM2 & (P53 & PTEN))) | (JNK & (!MDM2 & P53)))) | (ATM & (!MDM2 & P53)))
+PGE2, COX2
+PI3K, ((!EP2 & (!PTEN & RAS)) | (EP2 & !PTEN))
+PP2A, (!AKT & CERAMIDE)
+PTEN, (!JUN & (!NFKB & P53))
+RAF, ((!CERAMIDE & RAS) | CERAMIDE)
+RAS, ((!EP2 & GP130) | EP2)
+ROS, (!SOD & TNFR)
+S1P, SPHK1
+SMAC, MOMP
+SMAD, (!JUN & TGFR)
+SMAD7, ((!NFKB & ((!SMAD & SMAD7) | SMAD)) | NFKB)
+SMASE, ((!FADD & P53) | FADD)
+SOCS, STAT3
+SOD, ((!NFKB & STAT3) | NFKB)
+SPHK1, ((!ERK & TNFR) | ERK)
+STAT3, JAK
+TBID, (!BCL2 & CASP8)
+TGFB, TREG
+TGFR, (!SMAD7 & TGFB)
+TH1, ((!IFNG & (!IL10 & (IL12 & (!IL4 & !TGFB)))) | (IFNG & (!IL10 & (!IL4 & !TGFB))))
+TH2, (!IFNG & (IL4 & (!TGFB & TH2)))
+TNFA, MAC
+TNFR, TNFA
+TREG, ((!DC & (IL10 & !IL6)) | (DC & !IL6))
+APC, APC
