@@ -207,6 +207,9 @@ def write_asp(infile: IO, asp_file: IO):
 
 def solve_asp_clingo(asp_filename: str, max_output: int) -> str:
     """Run clingo on program asp_file and get the solutions."""  
+
+    print(asp_filename)
+
     result = subprocess.run(
         [
             "clingo",
@@ -236,20 +239,21 @@ def solve_asp_clingo(asp_filename: str, max_output: int) -> str:
 
 def solve_asp_hc_asp(asp_filename: str, max_output: int) -> str:
     """Run hc-asp on program asp_file and get the solutions."""
-    # {}TODO{Tarek}
+
     result = subprocess.run(
         [
-            "clingo",
+            "./hc_asp",
             str(max_output),
             #"--heuristic=Domain",
             #"--enum-mod=domRec",
             #dom_mod,
-            "--outf=2",  # json output
+            #"--outf=2",  # json output
             #f"--time-limit={time_limit}",
             asp_filename,
         ],
         capture_output=True,
         text=True,
+        shell=True
     )
 
     # https://www.mat.unical.it/aspcomp2013/files/aspoutput.txt
@@ -292,8 +296,9 @@ def get_solutions_clingo(
 def get_solutions_hc_asp(
     asp_output: str, nodes: List[str]
 ) -> List[List[str]]:
+
     """Display the ASP output back as stable configurations."""
-    # {}TODO{Tarek}
+
     solutions = json.loads(asp_output)
     list_stable_configurations = []
 
